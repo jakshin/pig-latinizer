@@ -1,6 +1,6 @@
 {
   "name": "pig-latinizer",
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "description": "Translates English text to Pig Latin, with proper handling of capitalization, punctuation, and hyphenated phrases",
   "keywords": ["pig", "latin", "piglatin", "pig-latin", "translate", "translator", "igpay", "atinlay", "bacon", "aconbay"],
