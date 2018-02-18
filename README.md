@@ -2,9 +2,9 @@
 
 Translates English text to Pig Latin, with proper handling of capitalization, punctuation, and hyphenated phrases.
 
-*Igpay Atinlay orfay ouryay AvascriptJay ojectpray. Atwhay ouldcay ebay etterbay?*
+*Igpay Atinlay orfay ouryay AvaScriptjay/YpeScript-tay ojectpray. Atwhay ouldcay ebay etterbay? (Exceptyay aconbay, ofyay oursecay.)*
 
-[![Build Status](https://travis-ci.org/jakshin/pig-latinizer.svg?branch=master)](https://travis-ci.org/jakshin/pig-latinizer)
+[![Build Status](https://travis-ci.org/jakshin/pig-latinizer.svg?branch=master)](https://travis-ci.org/jakshin/pig-latinizer) [![Coverage Status](https://coveralls.io/repos/github/jakshin/pig-latinizer/badge.svg?branch=master)](https://coveralls.io/github/jakshin/pig-latinizer?branch=master)
 
 ### Why?
 
@@ -44,7 +44,7 @@ import PigLatin from "pig-latinizer"
 
 const pigLatin: PigLatin = new PigLatin()
 pigLatin.exclusions.push("woot")
-const translated = pigLatin.translate("woot bacon!")  // woot aconbay
+const translated: string = pigLatin.translate("Bacon, woot!")  // Aconbay, woot!
 ```
 
 ### Usage in Node
@@ -54,5 +54,5 @@ const PigLatin = require("pig-latinizer").default
 
 const pigLatin = new PigLatin()
 pigLatin.exclusions.push("woot")
-const translated = pigLatin.translate("woot bacon")  // woot aconbay
+const translated = pigLatin.translate("Bacon, woot!")  // Aconbay, woot!
 ```
