@@ -4,6 +4,8 @@ Translates English text to Pig Latin, with proper handling of capitalization, pu
 
 *Igpay Atinlay orfay ouryay AvascriptJay ojectpray. Atwhay ouldcay ebay etterbay?*
 
+[![Build Status](https://travis-ci.org/jakshin/pig-latinizer.svg?branch=master)](https://travis-ci.org/jakshin/pig-latinizer)
+
 ### Why?
 
 Other Pig-Latin translators exist, but none of them worked as well as I wanted, so I created this one. Highlights:
