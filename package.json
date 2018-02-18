@@ -1,0 +1,47 @@
+{
+  "name": "pig-latinizer",
+  "version": "1.0.0",
+
+  "description": "Translates English text to Pig Latin, with proper handling of capitalization, punctuation, and hyphenated phrases",
+  "keywords": ["pig", "latin", "piglatin", "pig-latin", "translate", "translator", "igpay", "atinlay", "bacon", "aconbay"],
+
+  "homepage": "https://github.com/jakshin/pig-latinizer",
+  "bugs": "https://github.com/jakshin/pig-latinizer/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jakshin/pig-latinizer.git"
+  },
+
+  "license": "MIT",
+  "author": "Jason Jackson",
+
+  "main": "lib/pigLatin.js",
+  "typings": "types/pigLatin.d.ts",
+  "files": [
+    "lib/",
+    "types/"
+  ],
+
+  "scripts": {
+    "build": "rm -rf lib && rm -rf types && node_modules/.bin/tsc",
+    "clean": "rm -rf lib && rm -rf types",
+    "lint": "yarn run lint-ts; _ts=$?; yarn run lint-es6; _es6=$?; ((( $_ts > $_es6 )) && exit $_ts || exit $_es6)",
+    "lint-es6": "node_modules/.bin/eslint src/**/*.es6 src/**/*.js",
+    "lint-ts": "node_modules/.bin/tslint -c tslint.json -p tsconfig.json",
+    "unit": "node_modules/.bin/karma start --coverage",
+    "unit-debug": "node_modules/.bin/karma start --browsers Chrome --single-run false"
+  },
+  
+  "devDependencies": {
+    "eslint": "4.17.0",
+    "jasmine-core": "2.99.1",
+    "karma": "2.0.0",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-jasmine": "1.1.1",
+    "karma-mocha-reporter": "2.2.5",
+    "karma-typescript-es6-transform": "1.0.3",
+    "karma-typescript": "3.0.12",
+    "tslint": "5.9.1",
+    "typescript": "2.7.2"
+  }  
+}

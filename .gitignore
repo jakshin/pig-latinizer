@@ -1,0 +1,13 @@
+# builds
+lib/
+types/
+
+# code coverage reports
+coverage/
+
+# dependencies
+node_modules/
+yarn-error.log
+
+# macOS cruft
+.DS_Store
