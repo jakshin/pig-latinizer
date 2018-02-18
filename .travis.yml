@@ -3,6 +3,7 @@ node_js:
   - "node"  # latest stable release
 
 script: yarn unit
+after_success: yarn run coveralls
 
 cache:
   directories:

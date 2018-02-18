@@ -42,6 +42,7 @@ module.exports = function(config) {
       },
       reports: {
         "html": "coverage",
+        "lcovonly": "coverage",
         "text-summary": null  // null == console
         // "text": null  // null == console
       }

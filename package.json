@@ -1,6 +1,6 @@
 {
   "name": "pig-latinizer",
-  "version": "1.0.2",
+  "version": "1.0.3",
 
   "description": "Translates English text to Pig Latin, with proper handling of capitalization, punctuation, and hyphenated phrases",
   "keywords": ["pig", "latin", "piglatin", "pig-latin", "translate", "translator", "igpay", "atinlay", "bacon", "aconbay"],
@@ -25,6 +25,7 @@
   "scripts": {
     "build": "rm -rf lib && rm -rf types && node_modules/.bin/tsc && ./format_transpiled_code.sh",
     "clean": "rm -rf lib && rm -rf types",
+    "coveralls": "cat \"`find coverage -name lcovonly`\" | coveralls",
     "lint": "yarn run lint-ts; _ts=$?; yarn run lint-es6; _es6=$?; ((( $_ts > $_es6 )) && exit $_ts || exit $_es6)",
     "lint-es6": "node_modules/.bin/eslint src/**/*.es6 src/**/*.js",
     "lint-ts": "node_modules/.bin/tslint -c tslint.json -p tsconfig.json",
@@ -33,6 +34,7 @@
   },
   
   "devDependencies": {
+    "coveralls": "3.0.0",
     "esformatter": "0.10.0",
     "eslint": "4.17.0",
     "jasmine-core": "2.99.1",
