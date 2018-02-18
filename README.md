@@ -24,6 +24,8 @@ Other Pig-Latin translators exist, but none of them worked as well as I wanted, 
 
 * It allows words to be added to an exclusions list; excluded words will be passed through without translation.
 
+* It has no dependencies, so it won't bloat up your bundle.
+
 * It comes with TypeScript bindings.
 
 ### Install/Uninstall

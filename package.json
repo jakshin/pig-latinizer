@@ -1,6 +1,6 @@
 {
   "name": "pig-latinizer",
-  "version": "1.0.1",
+  "version": "1.0.2",
 
   "description": "Translates English text to Pig Latin, with proper handling of capitalization, punctuation, and hyphenated phrases",
   "keywords": ["pig", "latin", "piglatin", "pig-latin", "translate", "translator", "igpay", "atinlay", "bacon", "aconbay"],
@@ -23,7 +23,7 @@
   ],
 
   "scripts": {
-    "build": "rm -rf lib && rm -rf types && node_modules/.bin/tsc",
+    "build": "rm -rf lib && rm -rf types && node_modules/.bin/tsc && ./format_transpiled_code.sh",
     "clean": "rm -rf lib && rm -rf types",
     "lint": "yarn run lint-ts; _ts=$?; yarn run lint-es6; _es6=$?; ((( $_ts > $_es6 )) && exit $_ts || exit $_es6)",
     "lint-es6": "node_modules/.bin/eslint src/**/*.es6 src/**/*.js",
@@ -33,6 +33,7 @@
   },
   
   "devDependencies": {
+    "esformatter": "0.10.0",
     "eslint": "4.17.0",
     "jasmine-core": "2.99.1",
     "karma": "2.0.0",

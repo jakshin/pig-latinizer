@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "lineBreak": {
+    "before": {
+      "ElseStatement": ">=1",
+      "IfStatement": ">=2",
+      "WhileStatement": ">=2"
+    },
+    "after": {
+      "ElseStatementClosingBrace": ">=2",
+      "FunctionDeclarationClosingBrace": ">=2",
+      "FunctionExpressionClosingBrace": ">=2",
+      "IfStatementClosingBrace": ">=2",
+      "WhileStatementClosingBrace": ">=2"
+    }
+  }
+}

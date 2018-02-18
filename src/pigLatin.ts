@@ -1,7 +1,5 @@
 /**
  * Translates English to Pig Latin.
- * Used to mock translations for non-English-speaking users, in dev mode only, until we get translated strings.
- * It has zero dependencies, to keep its footprint as light as possible in consuming web clients.
  */
 class PigLatin {
   /** Words which should be excluded from translation. Case-sensitive. */
@@ -9,6 +7,8 @@ class PigLatin {
 
   /**
    * Translates an English string, containing an arbitrary amount of text, to Pig Latin.
+   * Punctuation and whitespace are preserved, including blank lines.
+   *
    * @param english The English string to translate.
    */
   public translate(english: string): string {
@@ -67,8 +67,9 @@ class PigLatin {
           consonants = consonants.toLowerCase()
         }
 
-        const hyphen: string = ((word.substr(-consonants.length).toUpperCase() === consonants.toUpperCase())
-            || word.substr(-1).toUpperCase() === consonants[0].toUpperCase()) ? "-" : ""
+        const consonantsRepeated: boolean = (word.substr(-consonants.length).toUpperCase() === consonants.toUpperCase())
+        const firstConsonantRepeated: boolean = (word.substr(-1).toUpperCase() === consonants[0].toUpperCase())
+        const hyphen: string = (consonantsRepeated || firstConsonantRepeated) ? "-" : ""
 
         word = word.substring(consonants.length) + hyphen + consonants + (isAllCaps ? "AY" : "ay")
 
