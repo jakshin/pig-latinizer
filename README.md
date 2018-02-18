@@ -12,17 +12,17 @@ Other Pig-Latin translators exist, but none of them worked as well as I wanted, 
 
 * It splits input words on whitespace, slashes, underscores, and dashes (not just whitespace), so `perfectly-fried bacon and/or ham is _so_tasty_` translates to `erfectlypay-iedfray aconbay andyay/oryay amhay isyay _osay_astytay_`.
 
-* It handles capitalization and all-caps nicely, so `This is AWESOME!` translates to `Isthay isyay AWESOMEYAY!`.
+* It handles capitalization and all-caps nicely, so `Bacon is AWESOME!` translates to `Aconbay isyay AWESOMEYAY!`.
 
 * It knows that `Y` is a consonant at the beginning of a word, and a vowel otherwise, so `yellow` becomes `ellowyay` and `bytes` becomes `ytesbay`.
 
-* When moving consonants to the end of a word during translation, it hyphenates when needed to prevent hard-to-read repeated consonants at the end of the translated word, so `Church test YAY` becomes `Urch-chay est-tay AY-YAY`.
+* It hyphenates when needed to prevent hard-to-read repeated consonants from appearing at the end of translated words, so `sheesh` and `peep` become `eesh-shay` and `eep-pay`.
 
-* It removes apostrophes in order to avoid mangling possessives and contractions, e.g. `A pig's ears aren't tasty` translates to `Ayay igspay earsyay arentyay astytay`, not `Ayay ig'spay earsyay aren'tyay astytay`.
+* It removes apostrophes in possessives and contractions to avoid mangling them, while still preserving leading and trailing apostrophes, e.g. `A pig's ears aren't tasty, don't eat 'em` translates to `Ayay igspay earsyay arentyay astytay, ontday eatyay 'emyay` - no awkward `ig'spay`, `aren'tyay`, or `on'tday`.
 
-* It doesn't mangle words for which there is no rational Pig Latin translation, such as `HTML`, `Odd13`, or `v1.0` - they're passed though as-is.
+* It doesn't mangle words for which there is no rational Pig Latin translation, such as `HTML`, `Odd13`, and `v1.0` - they're passed though as-is.
 
-* It allows words can be added to an exclusions list, to be passed through without translation.
+* It allows words to be added to an exclusions list; excluded words will be passed through without translation.
 
 * It comes with TypeScript bindings.
 
