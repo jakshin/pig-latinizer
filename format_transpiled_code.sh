@@ -5,15 +5,13 @@
 script_dir=`dirname "$0"`
 cd -- "$script_dir"
 
-# remove unneeded semicolons from the JS (esformatter doesn't handle them well), then format with esformatter
-node_modules/.bin/eslint --no-eslintrc --rule '{"semi": [2, "never"]}' --fix lib/*.js
-node_modules/.bin/esformatter -i lib/*.js
-
-# tweak the JS a bit more
-perl -0777 -pi -e 's/^}[\(\)]+$/$&\n/mg' lib/*.js  # add blank lines before & after class definition
-
-#regex='s/}\n{2,}( +)}/}\n$1}/g'  # remove blank lines between lines containing only closing braces
-perl -0777 -pi -e "$regex; $regex" lib/*.js
+# add some blank lines in the transpiled source
+perl -0777 -pi -e 's/(\s*\/\*\*\n)/\n$1/g' lib/*.js           # before block comments
+perl -0777 -pi -e 's/(\n\s*if)/\n$1/g' lib/*.js               # before `if` statements
+perl -0777 -pi -e 's/(\n\s*while)/\n$1/g' lib/*.js            # before `while` statements
+perl -0777 -pi -e 's/(\n\s*exports)/\n$1/g' lib/*.js          # before `exports` statements
+perl -0777 -pi -e 's/}(\n\s*var)/}\n$1/g' lib/*.js            # before `var` following closing brace
+perl -0777 -pi -e 's/}(;?)(\n\s*return)/}$1\n$2/g' lib/*.js   # before `return` following closing brace
 
 # add some blank lines in the type declaration
 perl -0777 -pi -e 's/;(\s+\/\*\*)/;\n$1/g' types/*.d.ts
