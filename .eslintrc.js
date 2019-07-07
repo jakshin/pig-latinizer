@@ -108,16 +108,16 @@ module.exports = {
 
   globals: {
     // Jasmine
-    "afterAll": true,
-    "afterEach": true,
-    "beforeAll": true,
-    "beforeEach": false,
-    "describe": true,
-    "expect": true,
-    "fail": true,
-    "it": true,
-    "jasmine": true,
-    "spyOn": true,
+    "afterAll": "readonly",
+    "afterEach": "readonly",
+    "beforeAll": "readonly",
+    "beforeEach": "readonly",
+    "describe": "readonly",
+    "expect": "readonly",
+    "fail": "readonly",
+    "it": "readonly",
+    "jasmine": "readonly",
+    "spyOn": "readonly",
   },
 
   parserOptions: {

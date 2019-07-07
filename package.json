@@ -1,6 +1,6 @@
 {
   "name": "pig-latinizer",
-  "version": "1.0.3",
+  "version": "1.0.4",
 
   "description": "Translates English text to Pig Latin, with proper handling of capitalization, punctuation, and hyphenated phrases",
   "keywords": ["pig", "latin", "piglatin", "pig-latin", "translate", "translator", "igpay", "atinlay", "bacon", "aconbay"],
@@ -25,26 +25,26 @@
   "scripts": {
     "build": "rm -rf lib && rm -rf types && node_modules/.bin/tsc && ./format_transpiled_code.sh",
     "clean": "rm -rf lib && rm -rf types",
-    "coveralls": "cat \"`find coverage -name lcovonly`\" | coveralls",
+    "coveralls": "cat \"`find coverage -name lcovonly | sort -r | head -n 1`\" | coveralls",
     "lint": "yarn run lint-ts; _ts=$?; yarn run lint-es6; _es6=$?; ((( $_ts > $_es6 )) && exit $_ts || exit $_es6)",
-    "lint-es6": "node_modules/.bin/eslint src/**/*.es6 src/**/*.js",
+    "lint-es6": "node_modules/.bin/eslint src",
     "lint-ts": "node_modules/.bin/tslint -c tslint.json -p tsconfig.json",
     "unit": "node_modules/.bin/karma start --coverage",
     "unit-debug": "node_modules/.bin/karma start --browsers Chrome --single-run false"
   },
   
   "devDependencies": {
-    "coveralls": "3.0.0",
+    "coveralls": "3.0.4",
     "esformatter": "0.10.0",
-    "eslint": "4.17.0",
-    "jasmine-core": "2.99.1",
-    "karma": "2.0.0",
+    "eslint": "6.0.1",
+    "jasmine-core": "3.4.0",
+    "karma": "4.1.0",
     "karma-chrome-launcher": "2.2.0",
-    "karma-jasmine": "1.1.1",
+    "karma-jasmine": "2.0.1",
     "karma-mocha-reporter": "2.2.5",
-    "karma-typescript-es6-transform": "1.0.3",
-    "karma-typescript": "3.0.12",
-    "tslint": "5.9.1",
-    "typescript": "2.7.2"
+    "karma-typescript-es6-transform": "4.1.1",
+    "karma-typescript": "4.1.1",
+    "tslint": "5.18.0",
+    "typescript": "3.5.2"
   }  
 }
