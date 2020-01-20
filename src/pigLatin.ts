@@ -53,13 +53,11 @@ class PigLatin {
       word += isAllCaps ? append.toUpperCase() : append
     }
     else {
-      // begins with a consonant; treat "y" as a vowel unless it starts the word
-      const firstVowelPos: number = (firstLetterUpped === "Y")
-        ? word.substring(1).search(/[aeiouy]/i) + 1
-        : word.search(/[aeiouy]/i)
+      // begins with a consonant; find the first vowel (including "y", except at the start of the word)
+      const firstVowelPos: number = this._indexOfFirstVowel(word)
 
       if (firstVowelPos !== -1) {
-        // (can't translate a word without vowels; maybe it's an acronym?)
+        // (don't translate a word without vowels; maybe it's an acronym?)
         // move leading consonants to the end, hyphenating if we're doubling them up, and append "ay"
         const isCapitalized: boolean = (!isAllCaps && word[0] === firstLetterUpped)
         let consonants: string = word.substring(0, firstVowelPos)
@@ -115,6 +113,18 @@ class PigLatin {
     }
 
     return fragments
+  }
+
+  /**
+   * Gets the index of the first vowel in the given word, or -1 if it contains no vowels.
+   * @param word The word in which to find a vowel.
+   */
+  private _indexOfFirstVowel(word: string): number {
+    // split off any leading Ys (result[1]), then search whatever's left, if anything (result[2]), for the first vowel
+    const result: RegExpExecArray = /(y*)(.*)/i.exec(word)
+
+    const index: number = result[2].search(/[aeiouy]/i)
+    return (index === -1) ? -1 : result[1].length + index
   }
 }
 

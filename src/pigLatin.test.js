@@ -34,6 +34,12 @@ describe("PigLatin", () => {
     })
     it("doesn't translate words which contain no vowels", () => {
       expect(pigLatin.translate("HTML")).toBe("HTML")
+      expect(pigLatin.translate("ymmv")).toBe("ymmv")
+      expect(pigLatin.translate("Y")).toBe("Y")
+      expect(pigLatin.translate("yyy")).toBe("yyy")
+      expect(pigLatin.translate("N")).toBe("N")
+      expect(pigLatin.translate("Nn")).toBe("Nn")
+      expect(pigLatin.translate("by")).toBe("ybay")
     })
     it("excludes requested words from translation, case-sensitively", () => {
       expect(pigLatin.translate("foo")).toBe("oofay")  // sanity check
@@ -95,6 +101,7 @@ describe("PigLatin", () => {
         expect(pigLatin.translate("yay")).toBe("ay-yay")
         expect(pigLatin.translate("Yay")).toBe("Ay-yay")
         expect(pigLatin.translate("YAY")).toBe("AY-YAY")
+        expect(pigLatin.translate("yyaayy!")).toBe("aayy-yyay!")
       })
       it("treating Y as a vowel when it's not at the beginning of the word", () => {
         expect(pigLatin.translate("bytes")).toBe("ytesbay")
@@ -158,6 +165,28 @@ describe("PigLatin", () => {
       expect(pigLatin._split("jason")).toEqual(["jason"])
       expect(pigLatin._split("")).toEqual([])
       expect(pigLatin._split()).toEqual([])
+    })
+  })
+
+  describe("_indexOfFirstVowel()", () => {
+    it("finds the first vowel in a word that begins with a vowel", () => {
+      expect(pigLatin._indexOfFirstVowel("a")).toBe(0)
+      expect(pigLatin._indexOfFirstVowel("Is")).toBe(0)
+      expect(pigLatin._indexOfFirstVowel("ENOUGH")).toBe(0)
+    })
+    it("finds the first vowel in a word that begins with a consonant", () => {
+      expect(pigLatin._indexOfFirstVowel("grr")).toBe(-1)
+      expect(pigLatin._indexOfFirstVowel("My")).toBe(1)
+      expect(pigLatin._indexOfFirstVowel("BACON")).toBe(1)
+    })
+    it("finds the first vowel in a word that begins with one or more Ys", () => {
+      expect(pigLatin._indexOfFirstVowel("Y")).toBe(-1)
+      expect(pigLatin._indexOfFirstVowel("yyy")).toBe(-1)
+      expect(pigLatin._indexOfFirstVowel("yay")).toBe(1)
+      expect(pigLatin._indexOfFirstVowel("yyaayy!")).toBe(2)
+    })
+    it("doesn't find a vowel in an empty word", () => {
+      expect(pigLatin._indexOfFirstVowel("")).toBe(-1)
     })
   })
 })
