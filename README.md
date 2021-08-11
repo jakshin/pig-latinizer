@@ -4,7 +4,7 @@ Translates English text to Pig Latin, with proper handling of capitalization, pu
 
 *Igpay Atinlay orfay ouryay AvaScriptjay/YpeScript-tay ojectpray. Atwhay ouldcay ebay etterbay? (Exceptyay aconbay, ofyay oursecay.)*
 
-[![Build Status](https://travis-ci.com/jakshin/pig-latinizer.svg?branch=master)](https://travis-ci.com/jakshin/pig-latinizer) [![Coverage Status](https://coveralls.io/repos/github/jakshin/pig-latinizer/badge.svg?branch=master)](https://coveralls.io/github/jakshin/pig-latinizer?branch=master)
+[![Build Status](https://travis-ci.com/jakshin/pig-latinizer.svg?branch=master)](https://travis-ci.com/jakshin/pig-latinizer) [![Coverage Status](https://coveralls.io/repos/github/jakshin/pig-latinizer/badge.svg?branch=master)](https://coveralls.io/github/jakshin/pig-latinizer?branch=master) [![CodeQL Status](https://github.com/jakshin/pig-latinizer/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/jakshin/pig-latinizer/actions/workflows/codeql-analysis.yml)
 
 ### Why?
 
