@@ -25,7 +25,6 @@
   "scripts": {
     "build": "rm -rf lib && rm -rf types && node_modules/.bin/tsc && ./format_transpiled_code.sh",
     "clean": "rm -rf lib && rm -rf types",
-    "coveralls": "cat \"`find coverage -name lcovonly | sort -r | head -n 1`\"/lcov.info | coveralls",
     "lint": "yarn run lint-ts; _ts=$?; yarn run lint-es6; _es6=$?; ((( $_ts > $_es6 )) && exit $_ts || exit $_es6)",
     "lint-es6": "node_modules/.bin/eslint src",
     "lint-ts": "node_modules/.bin/tslint -c tslint.json -p tsconfig.json",
@@ -34,7 +33,6 @@
   },
   
   "devDependencies": {
-    "coveralls": "3.1.1",
     "eslint": "8.7.0",
     "jasmine-core": "4.0.0",
     "karma": "6.3.11",
@@ -47,7 +45,6 @@
     "typescript": "4.5.4"
   },
   "resolutions": {
-    "coveralls/request/http-signature/jsprim/json-schema": "~0.4.0",
     "karma-mocha-reporter/strip-ansi/ansi-regex": "^5.0.1"
   }
 }
