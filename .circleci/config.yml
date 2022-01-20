@@ -1,0 +1,44 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+
+orbs:
+  # See https://circleci.com/developer/orbs
+  node: circleci/node@5.0.0
+  browser-tools: circleci/browser-tools@1.2.4
+  coveralls: coveralls/coveralls@1.0.6
+
+# Define a job named "build" to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+jobs:
+  build:
+    # Execution environment: latest Node.js LTS, browser prerequisites installed
+    # See https://circleci.com/developer/images/image/cimg/node
+    docker:
+      - image: cimg/node:lts-browsers
+
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Lint the code
+          command: yarn run lint
+      - run:
+          name: Build the code
+          command: yarn run build
+      - browser-tools/install-chrome
+      - run:
+          name: Run unit tests
+          command: yarn run unit
+      - coveralls/upload:
+          verbose: true
+
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows:
+  build-after-commit:
+    jobs:
+      - build
