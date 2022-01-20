@@ -29,7 +29,7 @@ class PigLatin {
     // part 2 = the word up to any single apostrophe (if present)
     // part 3 = apostrophe & word characters following it, or empty string
     // part 4 = punctuation (including apostrophe if no word characters follow it), or empty string
-    const parts: RegExpExecArray = /^([\W_]*)([^\W_]+)(['\u2019\u02bc][^\W_]+|)([\W_]*)$/.exec(fragment)
+    const parts = /^([\W_]*)([^\W_]+)(['\u2019\u02bc][^\W_]+|)([\W_]*)$/.exec(fragment)
     if (!parts) {
       return fragment  // we can't translate this non-word (it may be a separator)
     }
@@ -92,7 +92,7 @@ class PigLatin {
     let lastLastIndex: number = 0
 
     while (true) {
-      const result: RegExpExecArray = re.exec(str)
+      const result = re.exec(str)
 
       if (result === null) {
         // no more separators, but there might be one more word
@@ -121,7 +121,8 @@ class PigLatin {
    */
   private _indexOfFirstVowel(word: string): number {
     // split off any leading Ys (result[1]), then search whatever's left, if anything (result[2]), for the first vowel
-    const result: RegExpExecArray = /(y*)(.*)/i.exec(word)
+    // (exec will never return null for this regex, even if the word parameter is empty)
+    const result = /(y*)(.*)/i.exec(word) as RegExpExecArray
 
     const index: number = result[2].search(/[aeiouy]/i)
     return (index === -1) ? -1 : result[1].length + index
