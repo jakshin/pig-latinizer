@@ -26,7 +26,7 @@ module.exports = function(config) {
       "**/*.test.js": "karma-typescript"
     },
 
-    // https://github.com/monounity/karma-typescript/blob/master/cookbook.md
+    // https://github.com/monounity/karma-typescript/blob/master/packages/karma-typescript/cookbook.md
     karmaTypescriptConfig: {
       bundlerOptions: {
         resolve: {
@@ -42,7 +42,11 @@ module.exports = function(config) {
       },
       reports: {
         "html": "coverage",
-        "lcovonly": "coverage",
+        "lcovonly": {
+          directory: "coverage",
+          subdirectory: "",
+          filename: "lcov.info"
+        },
         "text-summary": null  // null == console
         // "text": null  // null == console
       }
