@@ -1,4 +1,4 @@
-import PigLatin from "pigLatin"
+import PigLatin from "./pigLatin"
 
 describe("PigLatin", () => {
   let pigLatin

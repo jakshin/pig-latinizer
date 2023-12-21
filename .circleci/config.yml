@@ -32,7 +32,7 @@ jobs:
       - browser-tools/install-chrome
       - run:
           name: Run unit tests
-          command: yarn run unit
+          command: yarn run test
       - coveralls/upload:
           verbose: true
 
