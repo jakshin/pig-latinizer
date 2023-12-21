@@ -2,15 +2,19 @@ module.exports = {
   // see https://eslint.org/docs/rules/ for rule definitions;
   // 0 == "off", 1 == "warn", 2 == "error"
 
-  // start with ESLint's recommended rule set as a baseline
-  extends: "eslint:recommended",
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint"],
+
+  // start with recommended rule sets as a baseline
+  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
 
   rules: {
     // turn off recommended rules that I don't care for
     "no-inner-declarations": 0,
+    "@typescript-eslint/no-var-requires": 0,
 
     // override some recommendations with my own preferences
-    "no-unused-vars": [2, { "args": "none" }],
+    "no-unused-vars": [2, { args: "none" }],
 
     // be more prescriptive about some things than ESLint's recommendations
     "accessor-pairs": 2,
@@ -19,7 +23,7 @@ module.exports = {
     "arrow-spacing": 2,
     "block-scoped-var": 2,
     "block-spacing": 2,
-    "brace-style": [2, "stroustrup", { "allowSingleLine": true }],
+    "brace-style": [2, "stroustrup", { allowSingleLine: true }],
     "comma-spacing": 2,
     "comma-style": 2,
     "computed-property-spacing": 2,
@@ -30,9 +34,16 @@ module.exports = {
     "generator-star-spacing": 2,
     "indent": ["error", 2],
     "jsx-quotes": 2,
-    "key-spacing": [2, { "mode": "minimum" }],
+    "key-spacing": [2, { mode: "minimum" }],
     "keyword-spacing": 2,
-    "lines-around-comment": [2, { "allowBlockStart": true, "beforeBlockComment": true, "beforeLineComment": true }],
+    "lines-around-comment": [2, {
+      allowArrayStart: true,
+      allowBlockStart: true,
+      allowClassStart: true,
+      allowObjectStart: true,
+      beforeBlockComment: true,
+      beforeLineComment: true,
+    }],
     "max-statements-per-line": 2,
     "new-cap": 2,
     "new-parens": 2,
@@ -40,13 +51,14 @@ module.exports = {
     "no-array-constructor": 2,
     "no-caller": 2,
     "no-confusing-arrow": 2,
+    "no-constant-condition": [2, { checkLoops: false }],
     "no-div-regex": 2,
     "no-eval": 2,
     "no-extend-native": 2,
     "no-extra-bind": 2,
     "no-extra-label": 2,
     "no-floating-decimal": 2,
-    "no-implicit-coercion": [2, { "allow": ["!!"] }],
+    "no-implicit-coercion": [2, { allow: ["!!"] }],
     "no-implied-eval": 2,
     "no-invalid-this": 2,
     "no-iterator": 2,
@@ -79,16 +91,16 @@ module.exports = {
     "no-useless-concat": 2,
     "no-useless-constructor": 2,
     "no-var": 2,
-    "no-warning-comments": [2, { "terms": ["xxx", "!!!" ], "location": "anywhere" }],
+    "no-warning-comments": [2, { terms: ["xxx", "!!!"], location: "anywhere" }],
     "no-whitespace-before-property": 2,
     "no-with": 2,
     "object-curly-spacing": [2, "always"],
     "operator-linebreak": 2,
     "padded-blocks": [2, "never"],
-    "prefer-const": [2, { "destructuring": "any", }],
+    "prefer-const": [2, { destructuring: "any", }],
     "prefer-template": 2,
     "quote-props": [2, "consistent-as-needed"],
-    "quotes": [2, "double", { "allowTemplateLiterals": true, "avoidEscape": true }],
+    "quotes": [2, "double", { allowTemplateLiterals: true, avoidEscape: true }],
     "rest-spread-spacing": [2, "never"],
     "semi-spacing": 2,
     "semi": [2, "never"],
@@ -103,21 +115,21 @@ module.exports = {
     "template-tag-spacing": 2,
     "wrap-iife": 2,
     "yield-star-spacing": 2,
-    "yoda": [2, "never", { "exceptRange": true }],
+    "yoda": [2, "never", { exceptRange: true }],
   },
 
   globals: {
     // Jasmine
-    "afterAll": "readonly",
-    "afterEach": "readonly",
-    "beforeAll": "readonly",
-    "beforeEach": "readonly",
-    "describe": "readonly",
-    "expect": "readonly",
-    "fail": "readonly",
-    "it": "readonly",
-    "jasmine": "readonly",
-    "spyOn": "readonly",
+    afterAll: "readonly",
+    afterEach: "readonly",
+    beforeAll: "readonly",
+    beforeEach: "readonly",
+    describe: "readonly",
+    expect: "readonly",
+    fail: "readonly",
+    it: "readonly",
+    jasmine: "readonly",
+    spyOn: "readonly",
   },
 
   parserOptions: {
