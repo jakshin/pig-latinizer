@@ -4,7 +4,7 @@ Translates English text to Pig Latin, with proper handling of capitalization, pu
 
 *Igpay Atinlay orfay ouryay AvaScriptjay/YpeScript-tay ojectpray. Atwhay ouldcay ebay etterbay? (Exceptyay aconbay, ofyay oursecay.)*
 
-[![Build Status](https://circleci.com/gh/jakshin/pig-latinizer.svg?style=shield)](https://app.circleci.com/pipelines/github/jakshin/pig-latinizer?branch=main&filter=all) [![Coverage Status](https://coveralls.io/repos/github/jakshin/pig-latinizer/badge.svg?branch=main)](https://coveralls.io/github/jakshin/pig-latinizer?branch=main) [![CodeQL Status](https://github.com/jakshin/pig-latinizer/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/jakshin/pig-latinizer/actions/workflows/codeql-analysis.yml)
+[![Build Status](https://circleci.com/gh/jakshin/pig-latinizer.svg?style=shield)](https://app.circleci.com/pipelines/github/jakshin/pig-latinizer?branch=main&filter=all) [![Coverage Status](https://coveralls.io/repos/github/jakshin/pig-latinizer/badge.svg?branch=main)](https://coveralls.io/github/jakshin/pig-latinizer?branch=main) [![CodeQL](https://github.com/jakshin/pig-latinizer/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/jakshin/pig-latinizer/actions/workflows/github-code-scanning/codeql)
 
 
 ### Why?
