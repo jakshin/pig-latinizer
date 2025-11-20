@@ -4,9 +4,9 @@ version: 2.1
 
 orbs:
   # See https://circleci.com/developer/orbs
-  node: circleci/node@5.0.0
-  browser-tools: circleci/browser-tools@1.2.4
-  coveralls: coveralls/coveralls@1.0.6
+  node: circleci/node@7.2.1
+  browser-tools: circleci/browser-tools@2.3.2
+  coveralls: coveralls/coveralls@2.2.5
 
 # Define a job named "build" to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -34,7 +34,7 @@ jobs:
           name: Run unit tests
           command: yarn run test --coverage
       - coveralls/upload:
-          verbose: true
+          debug: true
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
