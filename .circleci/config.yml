@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Build the code
           command: yarn run build
-      - browser-tools/install-chrome
+      - browser-tools/install_chrome
       - run:
           name: Run unit tests
           command: yarn run test --coverage
