@@ -202,4 +202,4 @@ module.exports = defineConfig([{
             exceptRange: true,
         }],
     },
-}, globalIgnores(["lib/", "types/", "eslint.config.js"])]);
+}, globalIgnores(["lib/", "types/", "lib.old/", "types.old/", "eslint.config.js"])]);
