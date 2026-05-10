@@ -25,6 +25,7 @@
   "scripts": {
     "build": "rm -rf lib && rm -rf types && node_modules/.bin/tsc && ./format_transpiled_code.sh",
     "clean": "rm -rf lib && rm -rf types",
+    "compare": "cmp lib/* lib.old/*; cmp types/* types.old/*",
     "lint": "eslint .",
     "test": "jest"
   },
