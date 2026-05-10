@@ -2998,14 +2998,14 @@ minimatch@^10.2.2, minimatch@^10.2.4:
   dependencies:
     brace-expansion "^5.0.5"
 
-minimatch@^3.0.4, minimatch@^3.1.3, minimatch@^3.1.5:
+minimatch@^3.0.4, minimatch@^3.1.1, minimatch@^3.1.5:
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.1.5.tgz#580c88f8d5445f2bd6aa8f3cadefa0de79fbd69e"
   integrity sha512-VgjWUsnnT6n+NUk6eZq77zeFdpW2LWDzP6zFGrCbHXiYNul5Dzqk2HHQ5uFH2DNW5Xbp8+jVzaeNt94ssEEl4w==
   dependencies:
     brace-expansion "^1.1.7"
 
-minimatch@^3.1.1, minimatch@^9.0.4, minimatch@^9.0.7:
+minimatch@^9.0.4:
   version "9.0.9"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-9.0.9.tgz#9b0cb9fcb78087f6fd7eababe2511c4d3d60574e"
   integrity sha512-OBwBN9AL4dqmETlpS2zasx+vTeWclWzkblfZk7KTA5j3jeOONz/tRCnZomUyvNg83wL5Zv9Ss6HMJXAgL8R2Yg==
