@@ -45,7 +45,6 @@
   },
 
   "resolutions": {
-    "@types/node": "^24.10.1",
     "baseline-browser-mapping": "*"
   }
 }
