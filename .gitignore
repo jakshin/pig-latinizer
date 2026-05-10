@@ -1,6 +1,8 @@
 # builds
 lib/
 types/
+lib.old/
+types.old/
 
 # code coverage reports
 coverage/
