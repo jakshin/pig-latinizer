@@ -32,22 +32,14 @@ Other Pig-Latin translators exist, but none of them worked as well as I wanted, 
 * It comes with TypeScript bindings.
 
 
-### Usage in TypeScript
-
-```typescript
-import PigLatin from "pig-latinizer"
-
-const pigLatin: PigLatin = new PigLatin()
-pigLatin.exclusions.push("woot")
-const translated: string = pigLatin.translate("Bacon, woot!")  // Aconbay, woot!
-```
-
-### Usage in Node
+### Usage
 
 ```javascript
-const PigLatin = require("pig-latinizer").default
+import PigLatin from "pig-latinizer"
 
 const pigLatin = new PigLatin()
 pigLatin.exclusions.push("woot")
-const translated = pigLatin.translate("Bacon, woot!")  // Aconbay, woot!
+const translated = pigLatin.translate("Bacon, woot!")  // "Aconbay, woot!"
 ```
+
+_Note that v1 and v2 are identical, except that v1 is published as ES5 CommonJS, and v2 is published as an ES6+ module._

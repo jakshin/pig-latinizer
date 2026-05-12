@@ -1,6 +1,6 @@
 {
   "name": "pig-latinizer",
-  "version": "1.0.6",
+  "version": "2.0.0",
 
   "description": "Translates English text to Pig Latin, with proper handling of capitalization, punctuation, and hyphenated phrases",
   "keywords": ["pig", "latin", "piglatin", "pig-latin", "translate", "translator", "igpay", "atinlay", "bacon", "aconbay"],
@@ -15,6 +15,7 @@
   "license": "MIT",
   "author": "Jason Jackson",
 
+  "type": "module",
   "main": "lib/pigLatin.js",
   "typings": "types/pigLatin.d.ts",
   "files": [
@@ -41,7 +42,7 @@
     "babel-jest": "^30.4.1",
     "eslint": "^10.3.0",
     "jest": "^30.4.2",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
 
   "resolutions": {
